@@ -2,27 +2,28 @@ name: C# HelloWorld Every 5 Minutes
 
 on:
   schedule:
-    - cron: '*/5 * * * *'     # ✅ Every 5 minutes
-  workflow_dispatch:           # ✅ Manual trigger option
+    - cron: '*/5 * * * *'   # Every 5 minutes
+  workflow_dispatch:        # Manual trigger option
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📦 Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: 🛠️ Setup .NET SDK
+      - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'   # Change to '8.0.x' if using .NET 8
+          dotnet-version: '6.0.x'
 
-      - name: 🕒 Log Timestamp
-        run: echo "Run at: $(date)"
+      - name: Log Timestamp
+        run: |
+          echo "Run at: $(date)"
 
-      - name: 🔨 Build HelloWorld
+      - name: Build HelloWorld
         run: dotnet build Helloworld.sln
 
-      - name: 🚀 Run HelloWorld
+      - name: Run HelloWorld
         run: dotnet run --project Helloworld/Helloworld.csproj
