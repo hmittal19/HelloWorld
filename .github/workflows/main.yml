@@ -2,7 +2,7 @@ name: C# HelloWorld Every Minute
 
 on:
   schedule:
-    - cron: '*/5 * * * *'  # Runs every 5 minutes (use '* * * * *' for every minute, but less reliable)
+    - cron: '* * * * *'  # Runs every 5 minutes (use '* * * * *' for every minute, but less reliable)
   workflow_dispatch:        # Allows manual trigger
 
 jobs:
