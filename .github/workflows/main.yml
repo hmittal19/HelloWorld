@@ -1,0 +1,30 @@
+name: C# HelloWorld at 5PM, 6PM, 7PM IST
+
+on:
+  schedule:
+    - cron: '30 11,12,13 * * *'   # 5PM, 6PM, 7PM IST (UTC: 11:30, 12:30, 13:30)
+  workflow_dispatch:              # Manual run option
+
+jobs:
+  build-and-run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET SDK
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
+
+      - name: Log Timestamp in IST
+        run: |
+          echo "Run time in IST:"
+          TZ=Asia/Kolkata date
+
+      - name: Build HelloWorld
+        run: dotnet build Helloworld.sln
+
+      - name: Run HelloWorld
+        run: dotnet run --project Helloworld/Helloworld.csproj
