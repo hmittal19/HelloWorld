@@ -13,7 +13,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET SDK
+      - name: Setup .NET SDK 6
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
@@ -23,10 +23,10 @@ jobs:
           echo "Run time in IST:"
           TZ=Asia/Kolkata date
 
-      - name: Compile HelloWorld.cs with csc
+      - name: Create minimal project and copy HelloWorld.cs
         run: |
-          csc -out:HelloWorld.exe HelloWorld/HelloWorld.cs
+          dotnet new console -o tempApp --framework net6.0
+          cp HelloWorld/HelloWorld.cs tempApp/Program.cs
 
-      - name: Run HelloWorld.exe
-        run: |
-          mono HelloWorld.exe
+      - name: Run HelloWorld.cs
+        run: dotnet run --project tempApp
