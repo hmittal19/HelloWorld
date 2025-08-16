@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld\\Helloworld.csproj": {}
+    "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld.csproj": {}
   },
   "projects": {
-    "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld\\Helloworld.csproj": {
+    "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld\\Helloworld.csproj",
+        "projectUniqueName": "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld.csproj",
         "projectName": "Helloworld",
-        "projectPath": "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld\\Helloworld.csproj",
+        "projectPath": "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\Office-Projets\\HelloWorld\\Helloworld\\Helloworld\\obj\\",
+        "outputPath": "D:\\Office-Projets\\HelloWorld\\Helloworld\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
