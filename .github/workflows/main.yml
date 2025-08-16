@@ -1,12 +1,12 @@
-name: C# HelloWorld at 5PM, 6PM, 7PM IST
+name: C# HelloWorld every 3 minutes
 
 on:
   schedule:
-    - cron: '30 11,12,13 * * *'   # 5PM, 6PM, 7PM IST (UTC: 11:30, 12:30, 13:30)
-  workflow_dispatch:              # Manual run option
+    - cron: '*/3 * * * *'          # Every 3 minutes (UTC)
+  workflow_dispatch:               # Manual run option
 
 jobs:
-  build-and-run:
+  run-cs-file:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,8 +23,5 @@ jobs:
           echo "Run time in IST:"
           TZ=Asia/Kolkata date
 
-      - name: Build HelloWorld
-        run: dotnet build Helloworld.sln
-
-      - name: Run HelloWorld
-        run: dotnet run --project Helloworld/Helloworld.csproj
+      - name: Run HelloWorld.cs directly
+        run: dotnet run HelloWorld/HelloWorld.cs
