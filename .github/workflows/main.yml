@@ -24,4 +24,7 @@ jobs:
           TZ=Asia/Kolkata date
 
       - name: Build HelloWorld
-        run: dotnet build Helloworl
+        run: dotnet build Helloworld.sln
+
+      - name: Run HelloWorld
+        run: dotnet run --project Helloworld/Helloworld.csproj
