@@ -2,8 +2,8 @@ name: C# HelloWorld Every 5 Minutes
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # ✅ Every 5 minutes
-  workflow_dispatch:         # ✅ Manual trigger option
+    - cron: '*/5 * * * *'     # ✅ Every 5 minutes
+  workflow_dispatch:           # ✅ Manual trigger option
 
 jobs:
   build-and-run:
@@ -18,7 +18,11 @@ jobs:
         with:
           dotnet-version: '6.0.x'   # Change to '8.0.x' if using .NET 8
 
-      - name: Build and Run HelloWorld
-        run: |
-          dotnet build Helloworld.sln
-          dotnet run --project Helloworld/Helloworld.csproj
+      - name: 🕒 Log Timestamp
+        run: echo "Run at: $(date)"
+
+      - name: 🔨 Build HelloWorld
+        run: dotnet build Helloworld.sln
+
+      - name: 🚀 Run HelloWorld
+        run: dotnet run --project Helloworld/Helloworld.csproj
