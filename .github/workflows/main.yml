@@ -1,9 +1,9 @@
-name: C# HelloWorld Every 5 Minutes
+name: C# HelloWorld at 5PM, 6PM, 7PM IST
 
 on:
   schedule:
-    - cron: '*/5 * * * *'   # Every 5 minutes
-  workflow_dispatch:        # Manual trigger option
+    - cron: '30 11,12,13 * * *'   # 5PM, 6PM, 7PM IST (UTC: 11:30, 12:30, 13:30)
+  workflow_dispatch:              # Manual run option
 
 jobs:
   build-and-run:
@@ -18,12 +18,10 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
-      - name: Log Timestamp
+      - name: Log Timestamp in IST
         run: |
-          echo "Run at: $(date)"
+          echo "Run time in IST:"
+          TZ=Asia/Kolkata date
 
       - name: Build HelloWorld
-        run: dotnet build Helloworld.sln
-
-      - name: Run HelloWorld
-        run: dotnet run --project Helloworld/Helloworld.csproj
+        run: dotnet build Helloworl
