@@ -1,40 +1,30 @@
-name: C# HelloWorld every 3 minutes
+name: C# HelloWorld at 5PM, 6PM, 7PM IST
 
 on:
   schedule:
-    - cron: '*/3 * * * *'          # Every 3 minutes (UTC)
-  workflow_dispatch:               # Allow manual triggering
+    - cron: '30 11,12,13 * * *'   # 5PM, 6PM, 7PM IST (UTC: 11:30, 12:30, 13:30)
+  workflow_dispatch:              # Manual run option
 
 jobs:
-  run-cs-file:
+  build-and-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET SDK 6
+      - name: Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '6.0.x'
 
-      - name: Log timestamp in IST
+      - name: Log Timestamp in IST
         run: |
           echo "Run time in IST:"
           TZ=Asia/Kolkata date
 
-      - name: Debug - List repo files
-        run: |
-          echo "Listing repository contents:"
-          ls -R
+      - name: Build HelloWorld
+        run: dotnet build Helloworld.sln
 
-      - name: Create minimal console project
-        run: |
-          dotnet new console -o tempApp --framework net6.0
-
-      - name: Replace Program.cs with your HelloWorld.cs
-        run: |
-          cp HelloWorld.cs tempApp/Program.cs
-
-      - name: Run HelloWorld.cs
-        run: dotnet run --project tempApp
+      - name: Run HelloWorld
+        run: dotnet run --project Helloworld/Helloworld.csproj
