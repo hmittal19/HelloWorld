@@ -18,11 +18,7 @@ jobs:
         with:
           dotnet-version: '6.0.x'   # Change to '8.0.x' if using .NET 8
 
-      - name: 🔧 Restore Dependencies
-        run: dotnet restore HelloWorld.sln
-
-      - name: 🏗️ Build Project
-        run: dotnet build HelloWorld.sln --configuration Release
-
-      - name: ▶️ Run HelloWorld
-        run: dotnet run --project Helloworld/Helloworld.csproj
+      - name: Build and Run HelloWorld
+        run: |
+          dotnet build Helloworld.sln
+          dotnet run --project Helloworld/Helloworld.csproj
