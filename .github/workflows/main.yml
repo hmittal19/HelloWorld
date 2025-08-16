@@ -1,28 +1,28 @@
-name: C# HelloWorld Every Minute
+name: C# HelloWorld Every 2 Minutes
 
 on:
   schedule:
-    - cron: '* * * * *'  # Runs every 5 minutes (use '* * * * *' for every minute, but less reliable)
-  workflow_dispatch:        # Allows manual trigger
+    - cron: '*/2 * * * *'   # ✅ Every 2 minutes
+  workflow_dispatch:         # ✅ Manual trigger option
 
 jobs:
   build-and-run:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
+      - name: 📦 Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Setup .NET SDK
+      - name: 🛠️ Setup .NET SDK
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '6.0.x'
+          dotnet-version: '6.0.x'   # Change to '8.0.x' if using .NET 8
 
-      - name: Restore dependencies
+      - name: 🔧 Restore Dependencies
         run: dotnet restore HelloWorld.sln
 
-      - name: Build project
+      - name: 🏗️ Build Project
         run: dotnet build HelloWorld.sln --configuration Release
 
-      - name: Run HelloWorld
+      - name: ▶️ Run HelloWorld
         run: dotnet run --project Helloworld/Helloworld.csproj
