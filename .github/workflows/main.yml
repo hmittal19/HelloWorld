@@ -18,16 +18,15 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
-      - name: Install dotnet-script
-        run: dotnet tool install -g dotnet-script
-
-      - name: Add dotnet tools to PATH
-        run: echo "$HOME/.dotnet/tools" >> $GITHUB_PATH
-
       - name: Log Timestamp in IST
         run: |
           echo "Run time in IST:"
           TZ=Asia/Kolkata date
 
-      - name: Run HelloWorld.cs using dotnet-script
-        run: dotnet-script HelloWorld/HelloWorld.cs
+      - name: Compile HelloWorld.cs with csc
+        run: |
+          csc -out:HelloWorld.exe HelloWorld/HelloWorld.cs
+
+      - name: Run HelloWorld.exe
+        run: |
+          mono HelloWorld.exe
