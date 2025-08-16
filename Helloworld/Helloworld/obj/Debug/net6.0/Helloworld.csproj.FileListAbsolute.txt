@@ -1,0 +1,15 @@
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\bin\Debug\net6.0\Helloworld.exe
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\bin\Debug\net6.0\Helloworld.deps.json
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\bin\Debug\net6.0\Helloworld.runtimeconfig.json
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\bin\Debug\net6.0\Helloworld.dll
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\bin\Debug\net6.0\Helloworld.pdb
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\Helloworld.csproj.AssemblyReference.cache
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\Helloworld.GeneratedMSBuildEditorConfig.editorconfig
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\Helloworld.AssemblyInfoInputs.cache
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\Helloworld.AssemblyInfo.cs
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\Helloworld.csproj.CoreCompileInputs.cache
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\Helloworld.dll
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\refint\Helloworld.dll
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\Helloworld.pdb
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\Helloworld.genruntimeconfig.cache
+D:\Office-Projets\HelloWorld\Helloworld\Helloworld\obj\Debug\net6.0\ref\Helloworld.dll
