@@ -1,0 +1,25 @@
+name: Local File Creator and Load Test
+
+on:
+  workflow_dispatch:  # Manual trigger
+
+jobs:
+  create-file-and-load:
+    runs-on: self-hosted  # Send this job to your own machine
+
+    steps:
+      - name: Create text file locally
+        run: |
+          echo "Hello from the self-hosted runner!" > local_output.txt
+          echo "Created on: $(date)" >> local_output.txt
+          echo "File path: $(pwd)/local_output.txt"
+
+      - name: Simulate CPU load
+        run: |
+          echo "Starting CPU load for 20 seconds..."
+          for i in {1..4}; do
+            (while :; do :; done) &
+          done
+          sleep 20
+          kill $(jobs -p)
+          echo "CPU load simulation complete."
